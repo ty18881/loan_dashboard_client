@@ -124,7 +124,7 @@ componentDidMount() {
     render() {
         return(
             <>
-            <h1>Greetings from the StateBarChart Component!</h1>
+            <h1>Applications By Status</h1>
             <canvas id="barchart" width="300" height="100"></canvas>
             </>
         )
