@@ -36,8 +36,8 @@ prepareData = (inputData) => {
 // key = date, value = # applications submitted on that date
 // Object.values returns an array of all the values in the object.
     for (let [key, value] of Object.entries(inputData)) {
-    // data.forEach((appsubmit) => {
-console.log(`Key = ${key} Value = ${value}`);
+   
+// console.log(`Key = ${key} Value = ${value}`);
         // push the submit_date to the labels array for the chartData collection.
         chartData.labels.push(key)
 
