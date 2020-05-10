@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class ShowApplication extends Component {
 
     state = {
-        appData: ""
+        appData: "",
+        loanData: []
     }
 
     fetchApplicationDetail = new Promise((resolve, reject) => {
@@ -24,25 +25,42 @@ class ShowApplication extends Component {
 
         // console.log("Checking State ", data)
         this.setState({
-            appData: data
+            appData: data,
+            loanData: data.loan
         })
         
+        console.log("Show App - Details", this.state.appData);
     }
     
 
 
 
     render() {
-      
 
+        // console.log(`Show App - Underlying Loan for ${this.state.appData.application_id} ${this.state.appData.loan}`);
+    
         return (
             <>
-            <div className="loan_details">
+            <div className="app_details">
+                <hr></hr>
                 Status: {this.state.appData.status}
                 Submit Date: {this.state.appData.submit_date}
                 Decision Date: {this.state.appData.decision_date}
                 
             </div>
+            <div className="loan_details">
+                <h4>Loan Details</h4>
+                
+                {this.state.loanData.map((thisLoan,index) => (
+                    <div key={thisLoan.id} className="loan">
+                    <h4>Principal Amount: {thisLoan.principal_amount}</h4>
+                    </div>
+                    
+                )
+                   
+                )}
+            </div>
+            <hr></hr>
             </>
         )
     }

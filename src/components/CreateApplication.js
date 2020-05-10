@@ -55,6 +55,7 @@ class CreateApplication extends Component {
     render () {
         return(
             <>
+            <div className="create_application">
             <h1>Start a new loan relief application here.</h1>
             <form onSubmit={this.handleSubmit}>
             <label htmlFor="borrower_id"></label>
@@ -102,6 +103,8 @@ class CreateApplication extends Component {
 
             <button className="addbutton" value="submit">Create Application</button>
          </form>
+
+         </div>
             </>
         );
     }

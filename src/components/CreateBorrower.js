@@ -66,7 +66,8 @@ handleSubmit = (event) => {
     render() {
         return (
             <>
-
+        <div className="create_borrower">
+            <h2>Create Borrower Record</h2>
          <form onSubmit={this.handleSubmit}>
             <label htmlFor="name"></label>
             <input 
@@ -105,7 +106,7 @@ handleSubmit = (event) => {
 
             <button className="addbutton" value="submit">Add Borrower</button>
          </form>
-
+         </div>
          </>
 
         )

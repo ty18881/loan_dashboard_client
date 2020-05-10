@@ -7,12 +7,15 @@ import AppByDateChart from './components/AppByDateChart';
 import CreateBorrower from './components/CreateBorrower';
 import CreateApplication from './components/CreateApplication';
 import ShowAllBorrowers from './components/ShowAllBorrowers';
+import ShowAllApplications from './components/ShowAllApplications';
 
 const baseURL = process.env.BASE_URL || "http://localhost:3000"
 
 class App extends Component {
 
   // handle when items are deleted 
+  // aiming for one method to do this for all models, may not get there.
+  // perhaps accept model/component name and baseURL
   
   handleDelete = (id) => {
     console.log("delete clicked" + id);
@@ -40,7 +43,7 @@ class App extends Component {
       <div className="HolyGrail">
 
 
-        <header><h1>Anon Bank - Customer Relief Program Dashboard</h1> </header>
+        <header><h1>2020 CARES ACT - Customer Relief Program Dashboard</h1> </header>
 
           <div className="HolyGrail-body">
                       {/* Center Panel */}
@@ -63,13 +66,16 @@ class App extends Component {
                                <ShowAllBorrowers 
                                 baseURL={baseURL} /> 
                             
-                            {/* <CreateBorrower
-                              baseURL={baseURL} /> */}
+                              <CreateBorrower
+                                baseURL={baseURL} />
                       </nav>
 
                     {/* Right Hand Side Panel */}
 
                     <aside className="HolyGrail-ads">
+                            <ShowAllApplications
+                              baseURL={baseURL} />
+
                         <CreateApplication
                         baseURL={baseURL} />
                     </aside>  

@@ -43,6 +43,12 @@ input[type=text]:focus {
   
 }
 
+.create_borrower, .create_application {
+  padding: 2px;
+  font-style: italic;
+  background-color: #DBE2EF;
+}
+
 @media (min-width: 768px) {
   .HolyGrail-body {
     flex-direction: row;
@@ -68,6 +74,6 @@ input[type=text]:focus {
   display: flex;
   flex-direction: row;
   align-content: center;
-  height: 25%;
-  width: 25%;
+  height: 45%;
+  width: 45%;
 }
