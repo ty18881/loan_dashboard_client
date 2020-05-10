@@ -103,8 +103,8 @@ componentDidMount() {
     render() {
         return(
             <>
-            <h1>Applications By Submission Date</h1>
-            <canvas id="subbydate" width="300" height="100"></canvas>
+            {/* <h3>Applications By Submission Date</h3> */}
+            <canvas id="subbydate" width="200" height="100"></canvas>
             </>
         )
     }

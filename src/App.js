@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-// import './App.css';
-
-
+import './App.css';
 
 import StateBarChart from './components/StateBarChart';
 import AppByDateChart from './components/AppByDateChart';
@@ -35,36 +33,64 @@ class App extends Component {
   render () {
   return (
    
-    <>
+  
     
     <div className="App">
-      <div className="borrower_list">
-      <ShowAllBorrowers 
-        baseURL={baseURL} />
-        
-      </div>
-     
-      <div className="new_borrower_form">
-      <CreateBorrower
-      baseURL={baseURL} />
-    </div>
 
-      <CreateApplication
-        baseURL={baseURL} />
+      <div className="HolyGrail">
 
-      <StateBarChart 
-        baseURL={baseURL}/>
-        </div>
-        <div>
-      <AppByDateChart
-        baseURL={baseURL} />
-    </div>
 
-   
-    </>
+        <header><h1>Anon Bank - Customer Relief Program Dashboard</h1> </header>
+
+          <div className="HolyGrail-body">
+                      {/* Center Panel */}
+                      <main className="HolyGrail-content"> 
+                          <h2>Application Statistics</h2>
+                          <div className="chart-container">
+                            <StateBarChart
+                              baseURL={baseURL}
+                            />
+                          
+                            <AppByDateChart
+                              baseURL={baseURL}
+                            />
+                          </div>
+                      </main>
+ 
+                      {/* Left hand side panel */}
+                      <nav className="HolyGrail-nav">
+                            
+                               <ShowAllBorrowers 
+                                baseURL={baseURL} /> 
+                            
+                            {/* <CreateBorrower
+                              baseURL={baseURL} /> */}
+                      </nav>
+
+                    {/* Right Hand Side Panel */}
+
+                    <aside className="HolyGrail-ads">
+                        <CreateApplication
+                        baseURL={baseURL} />
+                    </aside>  
+
+                    </div>
+
+
+        <footer>Anon Bank - Internal Use Only</footer>
+        {/* Close HOLYGRAIL div */}
+      </div>  
+       
+      {/* Close APP div */}
+    </div> 
+
+
+  
     
   );
   }
+
+  
 }
 
 export default App;

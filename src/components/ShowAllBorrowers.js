@@ -52,7 +52,7 @@ class ShowAllBorrowers extends Component {
        
         return (
             <>
-            <h1>Borrowers Requesting Relief</h1>
+            <h2>Borrowers Requesting Relief</h2>
             {this.state.borrowerList.map( borrower => {
                 return(
                     <div key={borrower.id} className="borrower">

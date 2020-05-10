@@ -124,8 +124,10 @@ componentDidMount() {
     render() {
         return(
             <>
-            <h1>Applications By Status</h1>
-            <canvas id="barchart" width="300" height="100"></canvas>
+            {/* <h3>Applications By Status</h3> */}
+           
+                    <canvas id="barchart" width="200" height="100"></canvas>
+
             </>
         )
     }
