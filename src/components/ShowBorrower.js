@@ -7,8 +7,12 @@ import React, { Component } from "react";
 
 class ShowBorrower extends Component {
 
-    showApplicationDetail = () => {
-        console.log("ShowBorrower Component - DISPLAYING APPLICATION DETAIL FOR GIVEN BORROWER");
+    getApplicationDetail = (appId) => {
+        console.log("ShowAllBorrower Component - Request for Application Details");
+        fetch(`${this.props.baseURL}/applications/${appId}`)
+        .then((response) => response.json())
+        .then((jData) => console.log(jData))
+         .catch((error) => console.log(error));
     }
     
     render() {
@@ -17,8 +21,10 @@ class ShowBorrower extends Component {
             <hr></hr>
             <h4>{this.props.borrower.name} Detail Record</h4>
             <h5>Segment:  {this.props.borrower.business_segment}  State:  {this.props.borrower.state}</h5>
-            <button className="form_button" onClick={this.showApplicationDetail}>Show Borrower Application Detail</button>
-            {/* <button className="form_button" onClick={this.props.updateRecord(this.props.borrower.id)}>Delete Borrower Record</button> */}
+            {this.props.borrower.application_id
+                ? <button className="form_button" onClick={ () => {this.getApplicationDetail(this.props.borrower.application_id)}}>Show Borrower Application Detail</button>
+                : <h4>No Application On File</h4>
+            }
             </>
         )
     }

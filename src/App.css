@@ -4,7 +4,7 @@
 
 .App {
   text-align: center;
-  background-color: #F9F7F7;
+  background-color: #F5F5F5;
   color: #112D4E;
   font-family: 'Jost', sans-serif;
 }
@@ -54,7 +54,7 @@ input[type=text]:focus {
   }
   .HolyGrail-nav, .HolyGrail-ads {
     /* 12em is the width of the columns */
-    flex: 0 0 15em;
+    flex: 0 0 17em;
     border: 1px solid #3F72AF;
   }
 }

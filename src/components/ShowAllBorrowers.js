@@ -47,6 +47,9 @@ class ShowAllBorrowers extends Component {
             currentBorrower: borrower
         })
     }
+
+   
+
     render() {
 
        
@@ -57,7 +60,7 @@ class ShowAllBorrowers extends Component {
                 return(
                     <div key={borrower.id} className="borrower">
                         {/* anon function here so showBorrowerDetail is only activated when the item is clicked. */}
-                       <div className="borrower_link" onClick={() => {this.toggleBorrowerDetail(borrower)}}>{borrower.name} {borrower.state}</div> 
+                       <div className="borrower_link" onClick={() => {this.toggleBorrowerDetail(borrower)}}>{borrower.name}</div> 
                       {/* if user has clicked on record, display show route for that item. */}
                     </div>
                 )
