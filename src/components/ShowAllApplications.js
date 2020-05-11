@@ -44,7 +44,8 @@ class ShowAllApplications extends Component {
     // the change to state will trigger re-rendering the ShowAllApplications component.
 
     handleDelete = (appId) => {
-        const findIndex = this.state.appList.findIndex(app => app._id === appId)
+        console.log(`Removing App #: ${appId} from the state`);
+        const findIndex = this.state.appList.findIndex(app => app.id === appId)
       const copyApp = [...this.state.appList]
       copyApp.splice(findIndex, 1)
 
@@ -52,6 +53,7 @@ class ShowAllApplications extends Component {
         appList: copyApp
       
     });
+    console.log('Revised State', this.state.appList)
 };
 
      // each application record is clickable.
