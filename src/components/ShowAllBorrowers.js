@@ -36,6 +36,10 @@ class ShowAllBorrowers extends Component {
         
     }
 
+    // removes the deleted item from current state so it doesn't appear
+    // on the screen.
+    
+
     // each borrower record is clickable.
     //onClick brings up the show route for the Borrower.
 

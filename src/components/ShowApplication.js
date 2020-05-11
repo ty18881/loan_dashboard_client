@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 
+
+// this class encapsulates the SHOW route for the Application model
+// will include opportunity to delete the item from the database
+// as well is revise the current record.
+
+// should also trigger removal of the application from the UX when it gets deleted
+// means sending a method to update App.js' state down through several levels
 class ShowApplication extends Component {
 
     state = {
@@ -32,7 +39,22 @@ class ShowApplication extends Component {
         console.log("Show App - Details", this.state.appData);
     }
     
+// handle user request to delete an application from the database
+// complexity is limited to the database, thank heaven!
 
+    deleteApplication = (appId) => {
+        console.log(`Received request to delete application ${appId}`);
+        fetch(`${this.props.baseURL}/applications/${appId}`, {
+            method: 'DELETE'
+        })
+        .then( response => {
+            console.log(`Application ${appId} removed`);
+            console.log("App Delete - Updating State");
+            this.props.handleDelete(appId);
+        })
+        .catch((error) => console.error({Error: error}));
+
+    }
 
 
     render() {
@@ -59,6 +81,10 @@ class ShowApplication extends Component {
                 )
                    
                 )}
+            </div>
+            <div className="delete_loan">
+
+                <button className="delete_button" onClick={() => {this.deleteApplication(this.state.appData.id)}}>Delete Application</button>
             </div>
             <hr></hr>
             </>

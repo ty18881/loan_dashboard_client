@@ -40,6 +40,20 @@ class ShowAllApplications extends Component {
         
     }
 
+    // update state so the deleted item no longer appears on the screen
+    // the change to state will trigger re-rendering the ShowAllApplications component.
+
+    handleDelete = (appId) => {
+        const findIndex = this.state.appList.findIndex(app => app._id === appId)
+      const copyApp = [...this.state.appList]
+      copyApp.splice(findIndex, 1)
+
+      this.setState({
+        appList: copyApp
+      
+    });
+};
+
      // each application record is clickable.
     //onClick brings up the show route for the Application.
 
@@ -70,7 +84,8 @@ class ShowAllApplications extends Component {
             ? <ShowApplication
                 app={this.state.currentApp} 
                 application_id={this.state.currentApp.id}
-                baseURL={this.props.baseURL}/>
+                baseURL={this.props.baseURL}
+                handleDelete={this.handleDelete}/>
             : () => {this.toggleApplicationDetail(this.state.selectedApp)}}
             </>
         )
