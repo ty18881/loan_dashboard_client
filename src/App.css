@@ -77,3 +77,8 @@ input[type=text]:focus {
   height: 45%;
   width: 45%;
 }
+
+.borrower_link:hover,
+.app_link:hover {
+  cursor: pointer;
+}
