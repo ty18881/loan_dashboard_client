@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import UpdateApplication from "./UpdateApplication";
+
 
 
 // this class encapsulates the SHOW route for the Application model
@@ -11,7 +13,8 @@ class ShowApplication extends Component {
 
     state = {
         appData: "",
-        loanData: []
+        loanData: [],
+        renderEditComponent: false
     }
 
     fetchApplicationDetail = new Promise((resolve, reject) => {
@@ -56,6 +59,18 @@ class ShowApplication extends Component {
 
     }
 
+    // handle user request to modify the application
+    toggleEditForm = (currApp) => {
+        // console.log('SHOW BORROWER DETAIL', record);
+        console.log("Toggle Borrower - REQUEST TO SHOW DETAIL DETECTED")
+        
+        this.setState({
+            renderEditComponent: !this.state.renderEditComponent
+            
+        })
+        console.log("State -Render Component", this.state.renderEditComponent)
+    }
+   
 
     render() {
 
@@ -85,8 +100,19 @@ class ShowApplication extends Component {
             <div className="delete_loan">
 
                 <button className="delete_button" onClick={() => {this.deleteApplication(this.state.appData.id)}}>Delete Application</button>
+                <button className="update_button" onClick={()=> this.toggleEditForm()}>Update Application</button>
             </div>
             <hr></hr>
+
+            
+
+            {this.state.renderEditComponent
+            ? <UpdateApplication
+                baseURL={this.props.baseURL}
+                appData={this.state.appData}
+                />
+            : ""
+            }
             </>
         )
     }

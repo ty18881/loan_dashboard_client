@@ -9,8 +9,9 @@ import React, { Component } from "react";
 // 
 class UpdateApplication extends Component {
 
+    
     handleInputChange = (event) => {
-        console.log("NEW Application - Handling Input")
+        console.log("Revised Application - Handling Input")
 
         this.setState({
             [event.target.id]: event.target.value
@@ -22,14 +23,14 @@ class UpdateApplication extends Component {
 
                 event.preventDefault();
                    
-                fetch(`${this.props.baseURL}/applications/${appId}`, {
+                fetch(`${this.props.baseURL}/applications/${this.props.appData.id}`, {
                     method: "PUT",
                     body: JSON.stringify({
-                        borrower_id: this.state.borrower_id,
-                        principal_amount: this.state.principal_amount,
-                        interest_rate: this.state.interest_rate,
-                        maturity_date: this.state.maturity_date,
-                        term: this.state.term
+                        borrower_id: this.state.borrower_id
+                        // principal_amount: this.state.principal_amount,
+                        // interest_rate: this.state.interest_rate,
+                        // maturity_date: this.state.maturity_date,
+                        // term: this.state.term
                     }),
                     headers: {
                         "Content-Type": "application/json"
@@ -41,10 +42,10 @@ class UpdateApplication extends Component {
                     console.log(resJson);
                     this.setState({
                         borrower_id: "",
-                        principal_amount: "",
-                        interest_rate: "",
-                        maturity_date: "",
-                        term: ""
+                        // principal_amount: "",
+                        // interest_rate: "",
+                        // maturity_date: "",
+                        // term: ""
                     })
                 })
                 .catch(error => console.error({ Error: error}));
@@ -54,7 +55,7 @@ class UpdateApplication extends Component {
     render () {
         return(
             <>
-            <div className="create_application">
+            <div className="update_application">
             <h1>Revise the loan relief application here.</h1>
             <form onSubmit={this.handleSubmit}>
             <label htmlFor="borrower_id"></label>
@@ -67,7 +68,7 @@ class UpdateApplication extends Component {
             />
             
 {/* collecting the new loan components here. */}
-            <label htmlFor="principal_amount"></label>
+            {/* <label htmlFor="principal_amount"></label>
             <input 
                 type="text"
                 id="principal_amount"
@@ -98,9 +99,9 @@ class UpdateApplication extends Component {
                 name="term"
                 onChange={this.handleInputChange}
                 placeholder="how many years until the loan matures?"
-            />
+            /> */}
 
-            <button className="addbutton" value="submit">Update Application</button>
+            <button className="addbutton" value="submit">Save Changes</button>
          </form>
 
          </div>

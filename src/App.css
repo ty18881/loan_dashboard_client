@@ -49,6 +49,11 @@ input[type=text]:focus {
   background-color: #DBE2EF;
 }
 
+.update_application {
+  padding: 2px;
+  font-style: italic;
+  background-color: #3F72AF;
+}
 @media (min-width: 768px) {
   .HolyGrail-body {
     flex-direction: row;
