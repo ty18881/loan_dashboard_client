@@ -94,7 +94,7 @@ class ShowAllBorrowers extends Component {
                 borrower={this.state.currentBorrower} 
                 baseURL={this.props.baseURL}
                 handleUpdateBorrower={this.handleUpdateBorrower}/>
-            : () => {this.toggleBorrowerDetail(this.state.selectedBorrower)}}
+            : ""}
             </>
         )
     }

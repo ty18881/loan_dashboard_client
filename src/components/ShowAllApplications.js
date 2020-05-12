@@ -111,7 +111,7 @@ class ShowAllApplications extends Component {
                 application_id={this.state.currentApp.id}
                 baseURL={this.props.baseURL}
                 handleDelete={this.handleDelete}/>
-            : () => {this.toggleApplicationDetail(this.state.selectedApplication)}}
+            : ""}
             </>
         )
     }
