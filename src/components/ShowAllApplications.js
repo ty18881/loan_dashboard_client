@@ -42,6 +42,25 @@ class ShowAllApplications extends Component {
 
     // update state so the deleted item no longer appears on the screen
     // the change to state will trigger re-rendering the ShowAllApplications component.
+    handleUpdateApplication = (application, id) => {
+        console.log("Handle Update Appliation - congrats! you got to the callback!");
+        const findIndex = this.state.appList.findIndex(application => application.id === id)
+        const copyApplication = [...this.state.appList]
+        // splice:  replace item at findIndex, replace a single item, put animal in the old item's place
+        copyApplication.splice(findIndex, 1, application)
+        this.setState({appList: copyApplication})
+    
+      }
+    
+      // update state when a new application is created so the component will re-render
+      handleAddApplication = application => {
+        const copyApplications = [...this.state.appList];
+        copyApplications.unshift(application);
+        this.setState({
+          appList: copyApplications,
+          currentApp: application
+        });
+      };
 
     handleDelete = (appId) => {
         console.log(`Removing App #: ${appId} from the state`);
@@ -62,12 +81,16 @@ class ShowAllApplications extends Component {
     toggleApplicationDetail = (app) => {
         
         console.log("toggle App Detail - REQUEST TO SHOW DETAIL DETECTED")
-        let toggleShow = false;
-        this.state.showRecordDetail ? this.setState({ showRecordDetail: toggleShow}) : this.setState({ showRecordDetail: !toggleShow});
+        console.log("Current Application ", app)
+        console.log('Show Record Flag', this.state.showRecordDetail)
+
         this.setState({
-            currentApp: app
+            showRecordDetail: !this.state.showRecordDetail,
+            currentApp: app 
         })
+       
     }
+
     render() {
 
         return(
@@ -88,7 +111,7 @@ class ShowAllApplications extends Component {
                 application_id={this.state.currentApp.id}
                 baseURL={this.props.baseURL}
                 handleDelete={this.handleDelete}/>
-            : () => {this.toggleApplicationDetail(this.state.selectedApp)}}
+            : () => {this.toggleApplicationDetail(this.state.selectedApplication)}}
             </>
         )
     }

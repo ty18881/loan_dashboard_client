@@ -36,16 +36,35 @@ class ShowAllBorrowers extends Component {
         
     }
 
-    // removes the deleted item from current state so it doesn't appear
-    // on the screen.
     
+    handleUpdateBorrower = (borrower, id) => {
+        console.log("Handle Update Borrower - congrats! you got to the callback!");
+        const findIndex = this.state.borrowerList.findIndex(borrower => borrower.id === id)
+        const copyBorrower = [...this.state.borrowerList]
+        // splice:  replace item at findIndex, replace a single item, put animal in the old item's place
+        copyBorrower.splice(findIndex, 1, borrower)
+        this.setState({borrowerList: copyBorrower})
+    
+      }
+    
+    
+      // newly added borrowers added to state so the component will re-render
+      handleAddBorrower = borrower => {
+        const copyBorrowers = [...this.state.borrowerList];
+        copyBorrowers.unshift(borrower);
+        this.setState({
+          borrowerList: copyBorrowers,
+          currentApp: borrower
+        });
+      };
 
     // each borrower record is clickable.
     //onClick brings up the show route for the Borrower.
 
     toggleBorrowerDetail = (borrower) => {
         // console.log('SHOW BORROWER DETAIL', record);
-        console.log("REQUEST TO SHOW DETAIL DETECTED")
+        console.log("Toggle Borrower - REQUEST TO SHOW DETAIL DETECTED")
+        
         this.setState({
             showRecordDetail: !this.showRecordDetail,
             currentBorrower: borrower
@@ -73,7 +92,8 @@ class ShowAllBorrowers extends Component {
             {this.state.showRecordDetail
             ? <ShowBorrower
                 borrower={this.state.currentBorrower} 
-                baseURL={this.props.baseURL}/>
+                baseURL={this.props.baseURL}
+                handleUpdateBorrower={this.handleUpdateBorrower}/>
             : () => {this.toggleBorrowerDetail(this.state.selectedBorrower)}}
             </>
         )

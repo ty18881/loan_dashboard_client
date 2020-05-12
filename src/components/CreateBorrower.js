@@ -17,6 +17,12 @@ import React, { Component } from "react"
 
 class CreateBorrower extends Component {
 
+    state = {
+        name: "",
+        stateabbr: "",
+        busseg: "",
+        relmgr: ""
+    }
     // capture user input in state as it's being typed.
     handleInputChange = (event) => {
         console.log("NEW Borrower - Handling Input")
@@ -54,9 +60,9 @@ handleSubmit = (event) => {
                 console.log(resJson);
                 this.setState({
                     name: "",
-                    state: "",
-                    business_segment: "",
-                    relationship_mgr_id: ""
+                    stateabbr: "",
+                    busseg: "",
+                    relmgr: ""
                 })
             })
             .catch(error => console.error({ Error: error}));

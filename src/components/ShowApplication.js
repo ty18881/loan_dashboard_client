@@ -65,17 +65,17 @@ class ShowApplication extends Component {
             <>
             <div className="app_details">
                 <hr></hr>
-                Status: {this.state.appData.status}
-                Submit Date: {this.state.appData.submit_date}
+                <h5>Status: {this.state.appData.status}</h5>
+                <h5>Submit Date: {this.state.appData.submit_date}</h5>
                 Decision Date: {this.state.appData.decision_date}
                 
             </div>
             <div className="loan_details">
-                <h4>Loan Details</h4>
+                <h5>Loan Details</h5>
                 
                 {this.state.loanData.map((thisLoan,index) => (
                     <div key={thisLoan.id} className="loan">
-                    <h4>Principal Amount: {thisLoan.principal_amount}</h4>
+                    <h6>Principal Amount: {thisLoan.principal_amount}</h6>
                     </div>
                     
                 )

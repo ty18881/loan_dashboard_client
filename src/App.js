@@ -13,6 +13,30 @@ const baseURL = process.env.BASE_URL || "http://localhost:3000"
 
 class App extends Component {
 
+
+  state = {
+    name: "",
+    state: "",
+    business_segment: "",
+    relationship_mgr_id: "",
+    borrower_id: "",
+    principal_amount: "",
+    interest_rate: "",
+    maturity_date: "",
+    term: ""
+  }
+
+  handleFormClearing = () => {
+    console.log('Added new Borrower - Clearing the Form input')
+    this.setState({
+      name: "",
+      state: "",
+    business_segment: "",
+    relationship_mgr_id: ""
+    })
+
+  }
+
   // handle when items are deleted 
   // aiming for one method to do this for all models, may not get there.
   // perhaps accept model/component name and baseURL
@@ -67,7 +91,8 @@ class App extends Component {
                                 baseURL={baseURL} /> 
                             
                               <CreateBorrower
-                                baseURL={baseURL} />
+                                baseURL={baseURL} 
+                                handleFormClearing={this.handleFormClearing}/>
                       </nav>
 
                     {/* Right Hand Side Panel */}
