@@ -20,10 +20,10 @@ class CreateApplication extends Component {
     handleSubmit = (event) => {
      console.log("HANDLE SUBMIT - Current State", this.state);
 
-        console.log("HANDLE SUBMIT - Base URL", `${this.props.baseURL}/applications`)
+        console.log("HANDLE SUBMIT - Base URL", `${this.props.baseURL}applications`)
                 event.preventDefault();
                    
-                fetch(`${this.props.baseURL}/applications`, {
+                fetch(`${this.props.baseURL}applications`, {
                     method: "POST",
                     body: JSON.stringify({
                         borrower_id: this.state.borrower_id,

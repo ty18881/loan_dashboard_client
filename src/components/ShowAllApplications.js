@@ -19,7 +19,7 @@ class ShowAllApplications extends Component {
 
     fetchApplicationData = new Promise((resolve, reject) => {
 
-        fetch(`${this.props.baseURL}/applications`)
+        fetch(`${this.props.baseURL}applications`)
         .then(response => response.json())
         .then( jData => {
             resolve(jData)

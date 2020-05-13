@@ -15,7 +15,7 @@ class ShowAllBorrowers extends Component {
 
     fetchBorrowerData = new Promise((resolve, reject) => {
 
-        fetch(`${this.props.baseURL}/borrowers`)
+        fetch(`${this.props.baseURL}borrowers`)
         .then(response => response.json())
         .then( jData => {
             resolve(jData)

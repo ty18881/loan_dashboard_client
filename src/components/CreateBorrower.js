@@ -42,7 +42,7 @@ handleSubmit = (event) => {
     console.log("HANDLE SUBMIT - Base URL", `${this.props.baseURL}/borrowers`)
             event.preventDefault();
                
-            fetch(`${this.props.baseURL}/borrowers`, {
+            fetch(`${this.props.baseURL}borrowers`, {
                 method: "POST",
                 body: JSON.stringify({
                     name: this.state.name,

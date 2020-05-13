@@ -23,7 +23,7 @@ class UpdateApplication extends Component {
 
                 event.preventDefault();
                    
-                fetch(`${this.props.baseURL}/applications/${this.props.appData.id}`, {
+                fetch(`${this.props.baseURL}applications/${this.props.appData.id}`, {
                     method: "PUT",
                     body: JSON.stringify({
                         borrower_id: this.state.borrower_id

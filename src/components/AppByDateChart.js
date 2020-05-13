@@ -87,7 +87,7 @@ getChartData = () => {
     // .then((jData) => console.log(jData))
     // .catch((error) => console.log(error));
     
-    fetch(`${this.props.baseURL}/appsubmits`)
+    fetch(`${this.props.baseURL}appsubmits`)
     .then((response) => response.json())
     .then((jData) => this.prepareData(jData))
     .then((data) => this.createChart(data))
