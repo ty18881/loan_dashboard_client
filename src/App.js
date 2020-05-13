@@ -9,7 +9,7 @@ import CreateApplication from './components/CreateApplication';
 import ShowAllBorrowers from './components/ShowAllBorrowers';
 import ShowAllApplications from './components/ShowAllApplications';
 
-const baseURL = process.env.BASE_URL || "http://localhost:3000"
+const baseURL = process.env.REACT_APP_BASEURL || "http://localhost:3000"
 
 class App extends Component {
 
