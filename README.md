@@ -24,9 +24,13 @@ https://loan-dashboard-client.herokuapp.com/
 - Re-render graphs as applications are added or deleted.
 - Display borrowers without applications in Italics on the INDEX route.
 - Borrower and Application SHOW routes render in the middle of the screen under the graphs.
+- Mobile friendly?  What's that?
 
 ## Defects / "Would be better if" Items
 - Refresh state when new borrowers or applications are added
+
+## Trello Board
+https://trello.com/b/ZHn4yL5m/loan-dashboard-application
 
 ## Wireframes
 
