@@ -15,6 +15,7 @@ Primary user is a loan administrator who has permission to view all loan data an
 - Faker on the backend to create simulated loan data
 
 ## The application URL
+https://loan-dashboard-client.herokuapp.com/
 
 ## Future Refinements
 - Use Rails Active Record dependencies more elegantly, especially for creating loans attached to deferral applications.
