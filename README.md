@@ -1,8 +1,10 @@
 # Customer Assistance Program - Deferral Application Dashboard
 
 # SEIR-FLEX-123  Project Number Four - May 2020
-This project simualates a leadership dashboard that would be used to track
+This project simulates a leadership dashboard that would be used to track
 applications for loan payment deferrals coming into our fictional bank.
+
+Primary user is a loan administrator who has permission to view all loan data and update data on file as needed.
 
 ## This project utilizes the following technologies under the hood:
 - React
