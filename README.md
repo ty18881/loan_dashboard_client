@@ -29,3 +29,6 @@ applications for loan payment deferrals coming into our fictional bank.
 
 ### Dashboard View
 ![Dashboard Wireframe](/assets/images/Loan-Data-Dashboard-Wireframe.png "Dashboard View")
+
+### Entity-Relationship Diagram
+![ER Diagram](/assets/images/Application-Routing-Wireframe.png "Entity-Relationship Diagram")
